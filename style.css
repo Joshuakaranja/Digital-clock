@@ -1,26 +1,130 @@
-body{
+/* --- GLOBAL PAGE STYLES --- */
+body {
     margin: 0;
-    background-image: url(https://i.pinimg.com/736x/23/d6/e7/23d6e736e1fbda81f78aa58f77a3cf7c.jpg);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://i.pinimg.com/736x/23/d6/e7/23d6e736e1fbda81f78aa58f77a3cf7c.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-#clock-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    
+    font-family: Arial, sans-serif;
+    color: white;
 }
 
-#clock{
-    font-size: 6.5rem;
-    font-family: 'Courier New', Courier, monospace;
+
+/* --- UNIVERSAL HIDE CLASS --- */
+.hidden {
+    display: none !important;
+}
+
+
+/* --- CLOCK SECTION --- */
+#clock-section {
+    margin-top: 50px;
+}
+
+#clock {
+    font-size: 6rem;
     font-weight: bold;
     text-align: center;
-    color: white;
+    padding: 15px 40px;
     backdrop-filter: blur(10px);
-    width: 100%;
-    background-color: hsl(0, 0%, 100%,0.1)
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+}
+
+
+/* --- WEATHER SECTION --- */
+#weather-section {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* --- WEATHER FORM --- */
+.weatherForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.weatherForm input {
+    padding: 12px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.weatherForm button {
+    padding: 12px 18px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.weatherForm button:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* --- WEATHER CARD --- */
+.card.weatherCard .hidden{
+    margin-top: 20px;
+    padding: 25px 30px;
+    width: 300px;
+    border-radius: 16px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.12);
+
+    /* animation base state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* visible state */
+.card.weatherCard.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- SPECIFIC ELEMENTS INSIDE CARD --- */
+.cityDisplay {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.tempDisplay {
+    font-size: 1.8rem;
+    margin: 5px 0;
+}
+
+.humidityDisplay,
+.descDisplay {
+    margin: 5px 0;
+}
+
+.weatherEmoji {
+    font-size: 3rem;
+    margin-top: 10px;
+}
+
+.errorDisplay {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ff6b6b;
 }

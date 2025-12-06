@@ -2,16 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Ockoloko
-        
-    </title>
+    <title>Ockoloko</title>
 </head>
+
 <body>
-    <div id="clock-container">
+
+    <!-- Clock Section -->
+    <section id="clock-section">
         <div id="clock">00:00:00</div>
-    </div>
+    </section>
+
+    <!-- Weather Search Section -->
+    <section id="weather-section">
+        <form class="weatherForm">
+            <input type="text" id="cityInput" placeholder="Enter city name" required>
+            <button type="submit">Get Weather</button>
+        </form>
+
+        <div class="card weatherCard hidden">
+            <h1 class="cityDisplay">Nairobi</h1>
+            <p class="tempDisplay">90°F</p>
+            <p class="humidityDisplay">Humidity:75%</p>
+            <p class="descDisplay">Clear Skies</p>
+            <p class="weatherEmoji">☀️</p>
+            <p class="errorDisplay hidden">Please Enter A City</p>
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
